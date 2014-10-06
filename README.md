@@ -19,6 +19,7 @@ usage
        -m <method>  Method for scan type. "list" for a list of methods.
        -o <file>    write output to file
        -f <format>  format for output. "list" for a list of formats.
+       -h, -?       show help and exit
        
     Target can be any of a single IP, a hostname, a CIDR, or a range. 
     Multiple target specifications can be given for a single scan.
