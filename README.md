@@ -15,7 +15,7 @@ usage
        -p <ports>   specify ports
        -i <secs>    host interval in seconds
        -r <count>   times to retry a host/port
-       -t <secs>    timeout
+       -w <secs>    timeout
        -m <method>  Method for scan type. "list" for a list of methods.
        -o <file>    write output to file
        -f <format>  format for output. "list" for a list of formats.
