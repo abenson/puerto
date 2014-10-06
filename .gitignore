@@ -27,3 +27,10 @@
 *.i*86
 *.x86_64
 *.hex
+
+# temp files
+.*.swp
+
+# build files
+Makefile
+puerto.make
