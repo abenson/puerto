@@ -8,12 +8,12 @@ struct Options OPTIONS = {
 	NO,       /* tcp */
 	NO,       /* udp */
 	NO,       /* rdns */
-	NULL, /* ports */
+	NULL,     /* ports */
 	3,        /* retries */
 	0,        /* method */
 	10,       /* interval */
 	60,       /* timeout */
-	NULL,   /* output */
+	NULL,     /* output */
 	0         /* format */
 };
 
