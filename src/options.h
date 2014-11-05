@@ -1,10 +1,6 @@
 #ifndef OPTIONS_H
 #define OPTIONS_H
 
-#include <stdio.h>
-#include <stdint.h>
-#include <time.h>
-
 #include "common.h"
 
 struct Options
