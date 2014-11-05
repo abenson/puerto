@@ -15,7 +15,7 @@ struct Options
 	BOOL rdns;
 	uint16_t *ports;
 	unsigned int retries;
-	unsigned int method;
+	char *method;
 	time_t interval;
 	time_t timeout;
 	FILE *output;

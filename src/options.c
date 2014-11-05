@@ -19,6 +19,40 @@ struct Options OPTIONS = {
 
 int opt_parse(int argc, char *argv[])
 {
+	int opt;
+	while(opt = getopt(argc, argv, "atunp:r:m:i:w:o:f:h?")) {
+		switch(opt) {
+			case 'a':
+				OPTIONS.alive = YES;
+				break;
+			case 't':
+				OPTIONS.tcp = YES;
+				break;
+			case 'u':
+				OPTIONS.udp = YES;
+				break;
+			case 'n':
+				OPTIONS.rdns = NO;
+				break;
+			case 'p':
+				OPTIONS.ports = ports_expand(optarg);
+				break;
+			case 'r':
+				OPTIONS.retries = atoi(optarg);
+				break;
+			case 'm':
+				OPTIONS.method = strdup(optarg);
+				break;
+			case 'i':
+				OPTIONS.interval = atoi(optarg);
+				break;
+			case 'w':
+				OPTIONS.timeout = atoi(optarg);
+				break;
+			case 'o':
+				OPTIONS.
+		}
+	}
 	return 0;
 }
 
