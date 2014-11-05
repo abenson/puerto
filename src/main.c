@@ -5,7 +5,10 @@
 
 int main(int argc, char *argv[])
 {
-	opt_parse(argc, argv);
-	opt_validate();
+	
+	if(opt_parse(argc, argv) > 0 || opt_validate() > 0) {
+		usage(argv[0]);
+		return 1;
+	}
 	return 0;
 }
