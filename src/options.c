@@ -99,6 +99,11 @@ int opt_cleanup(void)
 	return 0;
 }
 
+static void deduplicate(uint16_t **pList)
+{
+	printf("WARNING: Port deduplication is not implemented at this time.\n");
+}
+
 static int ports_expand(const char *ports, uint16_t **pList, BOOL *incPortZero)
 {
 	int i = 0;
@@ -126,6 +131,8 @@ static int ports_expand(const char *ports, uint16_t **pList, BOOL *incPortZero)
 			}
 		}
 	}
+
+	deduplicate(pList);
 
 	return 0;
 }
