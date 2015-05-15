@@ -2,6 +2,8 @@
 #include "output.h"
 #include "options.h"
 
+#include <string.h>
+
 /* Define defaults.*/
 struct Options OPTIONS = {
 	NO,       /* alive */
@@ -99,12 +101,31 @@ int opt_cleanup(void)
 
 static int ports_expand(const char *ports, uint16_t **pList, BOOL *incPortZero)
 {
-	*incPortZero = NO;
-	*pList = malloc(sizeof(**pList) * 2);
+	int i = 0;
+	char *sep = (char*)ports;
+
+	*pList = malloc(sizeof(**pList) * 65536); /* Horribly inefficient. */
 	if(*pList == NULL) {
 		return -1;
 	}
-	memset(*pList, 0, 2);
-	*pList[0] = 22;
+	memset(*pList, 0, 65536);
+
+	while(sep) {
+		char *tok, *start, *end;
+		tok = strsep(&sep, ",");
+		start = strsep(&tok, "-");
+		end = strsep(&tok, "-");
+		if(end == NULL) {
+			(*pList)[i] = atoi(start);
+			i++;
+		} else {
+			int k;
+			for(k = atoi(start); k <= atoi(end); k++) {
+				(*pList)[i] = k;
+				i++;
+			}
+		}
+	}
+
 	return 0;
 }
